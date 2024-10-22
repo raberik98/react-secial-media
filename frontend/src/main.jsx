@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import Home from './pages/Home'
+import Friends from './pages/Friends'
 import NotFound from './pages/NotFound'
 
 import Navbar from './components/Navbar'
@@ -23,7 +24,9 @@ function Router() {
     <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} />
     <main>
       {
-        currentPage == "home" ? <Home/> : <NotFound/> 
+        currentPage == "home" ? <Home/> :
+        currentPage == "friends" ? <Friends/> :
+        <NotFound/> 
       }
     </main>
     {/* //Footer! */}
