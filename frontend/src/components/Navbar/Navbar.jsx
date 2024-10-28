@@ -1,4 +1,6 @@
-export default function Navbar({ currentPage, setCurrentPage, pages=[] }) {
+import { Link } from "react-router-dom"
+
+export default function Navbar() {
     return <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
         <div className="container-fluid">
             <a className="navbar-brand" href="#">Sanyi's Friends</a>
@@ -7,11 +9,12 @@ export default function Navbar({ currentPage, setCurrentPage, pages=[] }) {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    {
-                        pages.map(page => <li className="nav-item">
-                            <a key={page} className={`nav-link ${page == currentPage ? "active" : ""}`} href="#" onClick={() => setCurrentPage(page)}>{page}</a>
-                        </li>)
-                    }
+                    <li className="nav-item">
+                        <Link className={`nav-link`} to="/" >Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className={`nav-link`} to="/friends" >Friends</Link>
+                    </li>
                 </ul>
             </div>
         </div>
