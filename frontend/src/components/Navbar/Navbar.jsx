@@ -17,6 +17,9 @@ export default function Navbar() {
                     </li>
                 </ul>
             </div>
+            <div className="d-flex" role="search">
+                <Link className={`nav-link`} to="/register" >Sign in</Link>
+            </div>
         </div>
     </nav>
 }

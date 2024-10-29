@@ -5,7 +5,7 @@ import { useFriends } from "../../hooks/FriendHooks"
 
 
 export default function Friends() {
-    const [friends, getFriends] = useFriends(1)
+    const [friends, getFriends] = useFriends()
 
     return <>
         <div className="container p-3">
