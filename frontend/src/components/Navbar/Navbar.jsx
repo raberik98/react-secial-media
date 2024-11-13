@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useAuthContext } from "../../hooks/ContextHooks.jsx"
 
 export default function Navbar() {
+    const { user, signOut } = useAuthContext()
+
     return <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
         <div className="container-fluid">
             <a className="navbar-brand" href="#">Sanyi's Friends</a>
@@ -17,9 +20,16 @@ export default function Navbar() {
                     </li>
                 </ul>
             </div>
-            <div className="d-flex" role="search">
-                <Link className={`nav-link`} to="/register" >Sign in</Link>
-            </div>
+            {
+                user ? 
+                <div className="d-flex" role="search">
+                    <button onClick={signOut} className="btn btn-primary">Log out</button>
+                </div> : 
+                <div className="d-flex" role="search">
+                    <Link className={`nav-link mr-1`} to="/login" >Sign in</Link>
+                    <Link className={`nav-link`} to="/register" >Sign up</Link>
+                </div>
+            }
         </div>
     </nav>
 }

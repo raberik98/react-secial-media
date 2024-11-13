@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Friends from './pages/Friends'
 import Admin from './pages/Admin'
 import Registration from './pages/Registration'
+import Login from './pages/Login'
 import NotFound from './pages/NotFound'
 
 
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path={"/"} element={<Home />} />
         <Route path={"/friends"} element={<Friends />} />
         <Route path={"/register"} element={<Registration />} />
+        <Route path={"/login"} element={<Login />} />
         <Route path={"/admin"} element={<Admin />} />
 
         {/* The not found route comes last */}

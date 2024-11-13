@@ -1,16 +1,16 @@
 import { useAuthContext } from "../../hooks/ContextHooks"
 import { useNavigate } from "react-router-dom"
 
-export default function Registration() {
-    const { registrationWIthEmailAndPassword } = useAuthContext()
+export default function Login() {
+    const { signIn } = useAuthContext()
     const navigate = useNavigate()
-    
+
     function handleSubmit(e) {
         e.preventDefault()
-        registrationWIthEmailAndPassword(
+        signIn(
             e.target.email.value,
             e.target.password.value
-        ).then(() => navigate("/friends")).catch(err => alert(err))
+        ).then(() => navigate("/friends"))
     }
 
     return <form onSubmit={handleSubmit}>
