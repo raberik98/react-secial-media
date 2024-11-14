@@ -1,5 +1,4 @@
 export default function SingleFeed({ feed }) {
-
     return <div className="card text-center mb-3" data-bs-theme="dark">
         <div className="card-header">
             {feed.postedBy}

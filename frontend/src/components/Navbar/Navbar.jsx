@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
-import { useAuthContext } from "../../hooks/ContextHooks.jsx"
+import { useAuthContext, useToastContext } from "../../hooks/ContextHooks.jsx"
 
 export default function Navbar() {
     const { user, signOut } = useAuthContext()
+    const { AddToast } = useToastContext()
+    // const { user, signOut } = useContext(authContext)
 
     return <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
         <div className="container-fluid">
@@ -30,6 +32,9 @@ export default function Navbar() {
                     <Link className={`nav-link`} to="/register" >Sign up</Link>
                 </div>
             }
+            <div className="d-flex" role="search">
+                    <button onClick={() => { AddToast(`Test this toast! --- ${Math.random(0.1000)*100}` , "info") }} className="btn btn-info">Test toast</button>
+                </div>
         </div>
     </nav>
 }

@@ -3,7 +3,7 @@ import './FriendList.css'
 export default function FriendList({ friends = [], clickHandler, searchHandler }) {
     return <>
         <div className='mb-3'>
-            <div class="mb-3">
+            <div className="mb-3">
                 <label htmlFor="friends-search-bar" className="form-label">Search by anything</label>
                 <input onChange={(e) => { searchHandler(e.target.value) }} type="email" className="form-control" id="friends-search-bar" aria-describedby="emailHelp" />
                 <div className="form-text">Name, gender, height, heair color</div>
